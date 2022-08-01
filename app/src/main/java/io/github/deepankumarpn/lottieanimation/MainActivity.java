@@ -2,26 +2,39 @@ package io.github.deepankumarpn.lottieanimation;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieListener;
 
 public class MainActivity extends AppCompatActivity {
-    LottieAnimationView lottieAnimationView;
-    Button btn_anim_loading;
-    int animSize = 0;
+    private LottieAnimationView lottieAnimationView;
+    private Button btnAnimLoading,oneByOneLooping;
+    private int animSize = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lottieAnimationView = findViewById(R.id.lottie_anim_view);
-        btn_anim_loading = findViewById(R.id.btn_anim_loading);
+        lottieAnimationView = findViewById(R.id.lottieAnimView);
+        btnAnimLoading = findViewById(R.id.btnAnimLoading);
+        oneByOneLooping = findViewById(R.id.oneByOneLooping);
+        lottieAnimationView.setFailureListener(new LottieListener<Throwable>() {
+            @Override
+            public void onResult(Throwable result) {
+                Log.v("LOTERR", "LOTERR " + result.getMessage());
+                Toast.makeText(getApplicationContext(), result.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        btn_anim_loading.setOnClickListener(view -> {
+        btnAnimLoading.setOnClickListener(view -> {
             animSize++;
             switch (animSize) {
                 case 1:
@@ -49,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     lottieAnimationView.setAnimation(R.raw.order_created);
                     break;
                 case 9:
-                    lottieAnimationView.setAnimation(R.raw.profile_created);
+                    lottieAnimationView.setAnimation(R.raw.digital_lending);
                     break;
                 case 10:
                     lottieAnimationView.setAnimation(R.raw.qa);
@@ -64,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     lottieAnimationView.setAnimation(R.raw.small_success_mark);
                     break;
                 case 14:
-                    lottieAnimationView.setAnimation(R.raw.coming_soon);
+                    lottieAnimationView.setAnimation(R.raw.coming);
                     break;
                 case 15:
                     lottieAnimationView.setAnimation(R.raw.no_notification);
@@ -95,6 +108,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationRepeat(Animator animator) {
 
+            }
+        });
+
+        oneByOneLooping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),OneByOneLooping.class);
+                startActivity(intent);
             }
         });
     }

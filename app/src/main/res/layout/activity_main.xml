@@ -17,7 +17,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/lottie_anim_view"
+                android:id="@+id/lottieAnimView"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:layout_margin="20dp"
@@ -26,14 +26,26 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/btn_anim_loading"
+                android:id="@+id/btnAnimLoading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
+                android:layout_margin="20dp"
                 android:text="Animation Loading"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lottie_anim_view" />
+                app:layout_constraintTop_toBottomOf="@+id/lottieAnimView" />
+
+
+            <Button
+                android:id="@+id/oneByOneLooping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="One by one Looping"
+                android:textAllCaps="false"
+                android:layout_margin="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAnimLoading" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
