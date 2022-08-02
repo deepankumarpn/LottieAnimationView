@@ -10,7 +10,6 @@ import com.airbnb.lottie.LottieAnimationView;
 public class OneByOneLooping extends AppCompatActivity {
 
     private LottieAnimationView lottieAnimViewOne, lottieAnimViewTwo;
-    Thread threadOne, threadTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
