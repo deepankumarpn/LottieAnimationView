@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Animation Loading"
+                android:text="@string/animation_loading"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lottieAnimView" />
@@ -40,7 +40,7 @@
                 android:id="@+id/oneByOneLooping"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="One by one Looping"
+                android:text="@string/one_by_one_looping"
                 android:textAllCaps="false"
                 android:layout_margin="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
