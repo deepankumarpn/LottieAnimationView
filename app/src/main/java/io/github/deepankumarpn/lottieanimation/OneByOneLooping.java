@@ -18,9 +18,8 @@ public class OneByOneLooping extends AppCompatActivity {
         setContentView(R.layout.activity_one_by_one_looping);
         lottieAnimViewOne = findViewById(R.id.lottieAnimViewOne);
         lottieAnimViewTwo = findViewById(R.id.lottieAnimViewTwo);
-        anim();
-
-//        firstAnimThread();
+        //anim();
+        firstAnimThread();
     }
 
     private void anim() {
