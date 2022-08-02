@@ -33,7 +33,6 @@ public class OneByOneLooping extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                lottieAnimViewOne.pauseAnimation();
                 lottieAnimViewTwo.playAnimation();
             }
 
@@ -59,7 +58,6 @@ public class OneByOneLooping extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                lottieAnimViewTwo.pauseAnimation();
                 lottieAnimViewOne.playAnimation();
             }
 
