@@ -19,7 +19,6 @@ public class OneByOneLooping extends AppCompatActivity {
         lottieAnimViewOne = findViewById(R.id.lottieAnimViewOne);
         lottieAnimViewTwo = findViewById(R.id.lottieAnimViewTwo);
         anim();
-        //firstAnimThread();
     }
 
     private void anim() {
@@ -75,66 +74,5 @@ public class OneByOneLooping extends AppCompatActivity {
 
             }
         });
-    }
-
-    private void firstAnimThread() {
-        threadOne = new Thread(() -> {
-            lottieAnimViewOne.setAnimation(R.raw.coming);
-            lottieAnimViewOne.setRepeatCount(1);
-            lottieAnimViewOne.setSpeed(1.0F);
-            lottieAnimViewOne.playAnimation();
-            lottieAnimViewOne.addAnimatorListener(new Animator.AnimatorListener() {
-                @Override
-                public void onAnimationStart(Animator animator) {
-
-                }
-
-                @Override
-                public void onAnimationEnd(Animator animator) {
-                    secondAnimThread();
-                }
-
-                @Override
-                public void onAnimationCancel(Animator animator) {
-
-                }
-
-                @Override
-                public void onAnimationRepeat(Animator animator) {
-
-                }
-            });
-        });
-        threadOne.start();
-    }
-
-    private void secondAnimThread() {
-        threadTwo = new Thread(() -> {
-            lottieAnimViewTwo.setAnimation(R.raw.digital_lending);
-            lottieAnimViewTwo.setRepeatCount(1);
-            lottieAnimViewTwo.setSpeed(1.0F);
-            lottieAnimViewTwo.playAnimation();
-            lottieAnimViewTwo.addAnimatorListener(new Animator.AnimatorListener() {
-                @Override
-                public void onAnimationStart(Animator animator) {
-
-                }
-
-                @Override
-                public void onAnimationEnd(Animator animator) {
-                }
-
-                @Override
-                public void onAnimationCancel(Animator animator) {
-
-                }
-
-                @Override
-                public void onAnimationRepeat(Animator animator) {
-
-                }
-            });
-        });
-        threadTwo.start();
     }
 }
