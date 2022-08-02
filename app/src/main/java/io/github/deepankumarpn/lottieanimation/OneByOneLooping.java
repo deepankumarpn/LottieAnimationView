@@ -10,6 +10,7 @@ import com.airbnb.lottie.LottieAnimationView;
 public class OneByOneLooping extends AppCompatActivity {
 
     private LottieAnimationView lottieAnimViewOne, lottieAnimViewTwo;
+    private int animCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class OneByOneLooping extends AppCompatActivity {
         lottieAnimViewOne.addAnimatorListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
-
+                animCount++;
             }
 
             @Override
@@ -58,7 +59,9 @@ public class OneByOneLooping extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                lottieAnimViewOne.playAnimation();
+                if (animCount != 2){
+                    lottieAnimViewOne.playAnimation();
+                }
             }
 
             @Override
