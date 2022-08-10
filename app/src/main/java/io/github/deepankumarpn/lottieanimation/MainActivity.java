@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -79,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
 
         activityMainBinding.oneByOneLooping.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(),OneByOneLooping.class);
+            startActivity(intent);
+        });
+        activityMainBinding.BtnBottomAnimation.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(),BottomNavigationActivity.class);
             startActivity(intent);
         });
     }
