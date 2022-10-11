@@ -70,8 +70,20 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 14:
                     activityMainBinding.lottieAnimView.setAnimation(R.raw.small_success_mark);
+                    break;
+                case 15:
+                    activityMainBinding.lottieAnimView.setAnimation(R.raw.rating);
+                    break;
+
+                case 16:
+                    activityMainBinding.lottieAnimView.setAnimation(R.raw.simple);
+                    break;
+                case 17:
+                    activityMainBinding.lottieAnimView.setAnimation(R.raw.threehundreadplus);
                     animSize = 0;
                     break;
+
+
             }
             activityMainBinding.lottieAnimView.setRepeatCount(ValueAnimator.INFINITE);
             activityMainBinding.lottieAnimView.setSpeed(1.0F);
